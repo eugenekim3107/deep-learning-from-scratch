@@ -18,9 +18,9 @@ class NeuralNetwork:
     def __init__(self, x, y, hidden_size, alpha):
         self.w1 = np.random.rand(hidden_size, x.shape[0]) - 0.5
         self.b1 = np.random.rand(hidden_size, 1) - 0.5
-        self.w2 = np.random.rand(hidden_size/2, hidden_size) - 0.5
-        self.b2 = np.random.rand(hidden_size/2, 1) - 0.5
-        self.w3 = np.random.rand(10, hidden_size/2) - 0.5
+        self.w2 = np.random.rand(hidden_size, hidden_size) - 0.5
+        self.b2 = np.random.rand(hidden_size, 1) - 0.5
+        self.w3 = np.random.rand(10, hidden_size) - 0.5
         self.b3 = np.random.rand(10, 1) - 0.5
         self.alpha = alpha
         self.m = x.shape[0]
