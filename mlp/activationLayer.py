@@ -1,6 +1,6 @@
 from Layer import Layer
 
-class ActivationLayer(Layer):
+class activationLayer(Layer):
     def __init__(self, activation, activation_prime):
         self.activation = activation
         self.activation_prime = activation_prime
