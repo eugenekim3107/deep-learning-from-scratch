@@ -10,7 +10,7 @@ x_train = np.array([[[0,0]], [[0,1]], [[1,0]], [[1,1]]])
 y_train = np.array([[[0]], [[1]], [[1]], [[0]]])
 
 # network
-net = regressionNN
+net = regressionNN()
 net.add(Layer(2, 3))
 net.add(activationLayer(tanh, tanh_prime))
 net.add(Layer(3, 1))
