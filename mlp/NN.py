@@ -1,6 +1,6 @@
 import numpy as np
 
-class regressionNN:
+class NN:
     def __init__(self):
         self.layers = []
         self.loss = None
