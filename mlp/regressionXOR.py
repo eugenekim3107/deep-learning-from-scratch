@@ -1,6 +1,6 @@
 from Layer import Layer
 from activationLayer import activationLayer
-from regressionNN import regressionNN
+from NN import regressionNN
 from activations import tanh, tanh_prime
 from losses import mse, mse_prime
 import numpy as np
