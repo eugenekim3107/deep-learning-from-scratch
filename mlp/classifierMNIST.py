@@ -32,3 +32,5 @@ net.fit(x_train[0:1000], y_train[0:1000], epochs=100, learning_rate=0.05)
 
 # test
 out = net.predict(x_train)
+print(out[0])
+print(y_train[0])
