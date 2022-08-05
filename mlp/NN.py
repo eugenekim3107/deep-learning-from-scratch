@@ -55,6 +55,6 @@ class NN:
 
             # calculate average error on all samples
             err /= samples
-            if i%100==0:
+            if i%10==0:
                 print('epoch %d/%d   error=%f' % (i + 1, epochs, err))
         print('epoch %d/%d  error=%f' % (epochs, epochs, err))
