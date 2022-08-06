@@ -1,3 +1,7 @@
+import sys
+
+sys.path.insert(0, "/Users/eugenekim/PycharmProjects/deepLearningFromScratch/mlp")
+
 import numpy as np
 import matplotlib.pyplot as plt
 from Layer import Layer
@@ -24,4 +28,6 @@ y_train = y_train.reshape(-1, 1, 10)
 
 net = torch.load("mlp.obj")
 out = net.predict(x_train)
+print(out[0])
+print(y_train[0])
 
