@@ -27,8 +27,6 @@ for num in range(len(temp)):
     y_train[num][temp[num]] = 1
 y_train = y_train.reshape(-1, 1, 10)
 
-net = torch.load("mlp.obj")
+net = torch.load("mlp/mlpMNIST.obj")
 out = net.predict(x_train)
-print(out[0])
-print(y_train[0])
 toolMNIST(x_train, y_train, out)

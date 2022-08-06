@@ -37,4 +37,4 @@ print(out[0])
 print(y_train[0])
 
 # save neural network
-torch.save(net, "mlp.obj")
+torch.save(net, "mlpMNIST.obj")
