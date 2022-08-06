@@ -12,6 +12,7 @@ from losses import mse, mse_prime
 import torch
 import os
 import pandas as pd
+from visualTool import toolMNIST
 
 os.chdir("..")
 
@@ -30,4 +31,4 @@ net = torch.load("mlp.obj")
 out = net.predict(x_train)
 print(out[0])
 print(y_train[0])
-
+toolMNIST(x_train, y_train, out)
