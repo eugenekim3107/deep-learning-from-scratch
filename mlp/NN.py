@@ -31,7 +31,7 @@ class NN:
         return result
 
     # train the network
-    def fit(self, x_train, y_train, epochs, learning_rate):
+    def fit(self, x_train, y_train, epochs, learning_rate, classification=False):
         # sample dimension first
         samples = len(x_train)
 
@@ -44,6 +44,14 @@ class NN:
                 output = x_train[j]
                 for layer in self.layers:
                     output = layer.forward_propagation(output)
+
+                # softmax for classification
+                if classification:
+                    final_output = [[]]
+                    expsum = np.sum(np.exp(output))
+                    for z in output[0]:
+                        final_output[0].append(np.exp(z) / expsum)
+                    output = final_output
 
                 # compute loss (for display purpose only)
                 err += self.loss(y_train[j], output)

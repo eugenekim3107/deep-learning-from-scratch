@@ -23,15 +23,13 @@ y_train = y_train.reshape(-1,1,10)
 # network
 net = NN()
 net.add(Layer(784, 100))
-net.add(activationLayer(tanh, tanh_prime))
-net.add(Layer(100,100))
-net.add(activationLayer(tanh, tanh_prime))
+net.add(activationLayer(ReLU, ReLU_prime))
 net.add(Layer(100,10))
 net.add(activationLayer(tanh, tanh_prime))
 
 # train
 net.use(mse, mse_prime)
-net.fit(x_train[0:1000], y_train[0:1000], epochs=150, learning_rate=0.05)
+net.fit(x_train[0:1000], y_train[0:1000], epochs=50, learning_rate=0.25, classification=True)
 
 # test
 out = net.predict(x_train)
