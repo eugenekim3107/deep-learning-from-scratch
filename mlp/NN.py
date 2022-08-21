@@ -45,13 +45,13 @@ class NN:
                 for layer in self.layers:
                     output = layer.forward_propagation(output)
 
-                # softmax for classification
-                if classification:
-                    final_output = [[]]
-                    expsum = np.sum(np.exp(output))
-                    for z in output[0]:
-                        final_output[0].append(np.exp(z) / expsum)
-                    output = final_output
+                # # softmax for classification
+                # if classification:
+                #     final_output = [[]]
+                #     expsum = np.sum(np.exp(output))
+                #     for z in output[0]:
+                #         final_output[0].append(np.exp(z) / expsum)
+                #     output = final_output
 
                 # compute loss (for display purpose only)
                 err += self.loss(y_train[j], output)

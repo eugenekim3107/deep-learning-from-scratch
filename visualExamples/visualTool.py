@@ -18,3 +18,4 @@ def toolMNIST(x_train, y_train, y_pred):
     print("Predicted Value: " + str(max_idx) + "\n" + "True Value: " + str(true_val))
     plt.imshow(xreshaped, cmap="gray")
     plt.show()
+    plt.close()
