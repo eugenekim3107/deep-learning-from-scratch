@@ -1,7 +1,10 @@
 import numpy as np
 
-def cross_entropy(x):
-    return np.exp(x - np.max(x)) / np.sum(np.exp(x - np.max(x)), axis=1)
+def cross_entropy(X, y):
+    softmax = np.exp(X - np.max(X)) / np.sum(np.exp(X - np.max(X)), axis=1)
+    return np.sum(np.multiply(-np.log(softmax), y))
 
-def softmax_prime(x):
-    return
+def cross_entropy_prime(X, y):
+    softmax = np.exp(X - np.max(X)) / np.sum(np.exp(X - np.max(X)), axis=1)
+    grad = softmax - y
+    return grad
