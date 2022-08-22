@@ -1,5 +1,4 @@
 import numpy as np
-from crossEntropy import cross_entropy
 
 class NN:
     def __init__(self):
@@ -32,7 +31,7 @@ class NN:
         return result
 
     # train the network
-    def fit(self, x_train, y_train, epochs, learning_rate, classification=False):
+    def fit(self, x_train, y_train, epochs, learning_rate):
         # sample dimension first
         samples = len(x_train)
 
