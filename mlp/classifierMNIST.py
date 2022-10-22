@@ -25,11 +25,10 @@ net = NN()
 net.add(Layer(784, 100))
 net.add(activationLayer(ReLU, ReLU_prime))
 net.add(Layer(100,10))
-net.add(activationLayer(tanh, tanh_prime))
 
 # train
 net.use(cross_entropy, cross_entropy_prime)
-net.fit(x_train[0:1000], y_train[0:1000], epochs=50, learning_rate=0.25)
+net.fit(x_train[0:1000], y_train[0:1000], epochs=50, learning_rate=0.01)
 
 # test
 out = net.predict(x_train)
