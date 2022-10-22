@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import os
 import torch
+import matplotlib.pyplot as plt
 
 # data file
 os.chdir("..")
@@ -28,12 +29,20 @@ net.add(Layer(100,10))
 
 # train
 net.use(cross_entropy, cross_entropy_prime)
-net.fit(x_train[0:1000], y_train[0:1000], epochs=50, learning_rate=0.01)
+net.fit(x_train[0:1000], y_train[0:1000], epochs=100, learning_rate=0.01)
 
 # test
 out = net.predict(x_train)
 print(out[0])
 print(y_train[0])
+
+# visualize
+lossList = np.array(net.lossList)
+plt.plot(lossList[:,0], lossList[:,1])
+plt.xlabel("Number of Epochs")
+plt.ylabel("Cross Entropy Loss Value")
+plt.title("MLP Training Loss on MNIST Dataset")
+plt.savefig('visualExamples/trainingLossMNIST.png')
 
 # save neural network
 torch.save(net, "mlp/mlpMNIST.obj")
